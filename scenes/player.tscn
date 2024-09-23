@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://clixqlmrwtl60"]
+
+[ext_resource type="Script" path="res://scenes/Player.cs" id="1_0yh34"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nc4rn"]
+radius = 2.0
+height = 6.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+disable_mode = 2
+script = ExtResource("1_0yh34")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_nc4rn")
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.75
+drag_top_margin = 0.4
+drag_right_margin = 0.75
+drag_bottom_margin = 0.4
