@@ -6,8 +6,8 @@
 [node name="Main" type="Node2D"]
 
 [node name="LevelGenerator" parent="." instance=ExtResource("1_2ai8n")]
-LevelSize = Vector2(30, 30)
-PlatformGaps = 8
+LevelSize = Vector2(20, 30)
+PlatformCount = 10
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_yrsm8")]
 position = Vector2(105, 81)

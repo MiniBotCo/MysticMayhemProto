@@ -5,7 +5,7 @@ public partial class Player : CharacterBody2D
 {
 	private Camera2D _camera;
 
-	public const float Speed = 215.0f;
+	public const float Speed = 175.0f;
 	public const float JumpVelocity = -185.0f;
 
 	public const int CoyoteTime = 8;
@@ -39,14 +39,14 @@ public partial class Player : CharacterBody2D
 			velocity.Y = JumpVelocity;
 		}
 
-		//TODO Make this work when more than than collision layers 1 and 2 are in use
+		// Disables the mask for the second collision layer, allowing the player to drop through certain platforms.
 		if (Input.IsActionPressed("down"))
 		{
-			CollisionMask = 0b00000000_00000000_00000000_00000001;
+			SetCollisionMaskValue(2, false);
 		}
 		else
 		{
-			CollisionMask = 0b00000000_00000000_00000000_00000011;
+			SetCollisionMaskValue(2, true);
 		}
 
 		// Get the input direction and handle the movement/deceleration.
